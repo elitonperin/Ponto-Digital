@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePatrao" >
+
+    <TextView
+        android:id="@+id/textHomePatrao"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/patrao"
+        android:layout_margin="3dp"
+        />
+	<TextView
+        android:id="@+id/textHomePatraoCabecalho"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textHomePatrao"
+        android:text="@string/infoPatrao"
+        android:layout_margin="3dp"
+        />
+
+    <ListView
+        android:id="@+id/lista_empregados"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/botaoAddEmpregado"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textHomePatraoCabecalho"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/botaoAddEmpregado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textHomePatraoCabecalho"
+        android:text="@string/addEmp" />
+
+    <Button
+        android:id="@+id/botaoVoltaHPatrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/volta" />
+</RelativeLayout>

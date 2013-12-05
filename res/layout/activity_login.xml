@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    tools:context=".Login">
+
+ <RelativeLayout
+     android:id="@+id/relativeLayout1"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical" >
+
+    <EditText
+         android:id="@+id/editTextLogin"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="14dp"
+         android:ems="10"
+         android:hint="@string/login" >
+
+     </EditText>
+
+     <EditText
+         android:id="@+id/editTextSenha"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/editTextLogin"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="33dp"
+         android:ems="10"
+         android:hint="@string/senha"
+         android:inputType="textPassword" />
+
+     <Button
+         android:id="@+id/buttonSair"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/editTextLogin"
+         android:layout_below="@+id/editTextSenha"
+         android:layout_marginTop="50dp"
+         android:text="@string/sair" />
+
+     <CheckBox
+         android:id="@+id/checkBox1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/editTextSenha"
+         android:layout_below="@+id/buttonSair"
+         android:layout_marginTop="16dp"
+         android:text="@string/patrao" />
+
+     <Button
+         android:id="@+id/buttonSenha"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/buttonSair"
+         android:layout_below="@+id/checkBox1"
+         android:layout_marginTop="23dp"
+         android:text="@string/senhaesqueci" />
+
+     <Button
+         android:id="@+id/buttonLogar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/checkBox1"
+         android:layout_alignRight="@+id/checkBox1"
+         android:text="@string/logar" />
+
+ </RelativeLayout>
+
+</ScrollView>

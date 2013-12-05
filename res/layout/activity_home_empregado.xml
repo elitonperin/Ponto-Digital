@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeEmpregado" >
+
+    <TextView
+        android:id="@+id/textHomeEmpregado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bemvindo" />
+    <TextView
+	    android:id="@+id/descricaoHomeEmpregado"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/textHomeEmpregado"
+	    android:text="@string/bemvindo" />
+
+    <ListView
+        android:id="@+id/lista_tarefas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/marcaPontoEmpregado"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/descricaoHomeEmpregado" >
+
+	</ListView>
+
+    <Button
+        android:id="@+id/marcaPontoEmpregado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/marcaponto" />
+
+    <Button
+        android:id="@+id/sairEmpregado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/sair" />
+
+</RelativeLayout>

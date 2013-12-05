@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tb.eliton.testepd"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="tb.eliton.telas.Login"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="tb.eliton.telas.HomeEmpregado"
+            android:label="@string/title_activity_home_empregado" >
+        </activity>
+        <activity
+            android:name="tb.eliton.telas.HomePatrao"
+            android:label="@string/title_activity_home_patrao" >
+        </activity>
+        <activity
+            android:name="tb.eliton.telas.ViewEmpregado"
+            android:label="@string/title_activity_view_empregado" >
+        </activity>
+    </application>
+
+</manifest>
