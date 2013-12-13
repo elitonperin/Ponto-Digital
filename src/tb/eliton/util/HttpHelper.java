@@ -13,15 +13,18 @@ import org.apache.http.util.EntityUtils;
 public class HttpHelper
 {
 	private LogHelper logHelper;
-	static public String IP = "10.6.54.3";
+	static public String IP = "gradweb.facom.ufms.br/~eliton_perin";
 	
 	/*
 	 * String url = "http://gradweb.facom.ufms.br/~eliton_perin/topicosjsons/loginP.json"; // facom estável
 	 * String url = "http://10.6.71.95/jsons/loginP.json"; //facom
 	 * String url = "http://10.6.75.59/jsons/loginP.json"; // facom
 	 * String url = "http://10.0.0.5/jsons/loginP.json"; //biblio
+	 * 10.6.48.235
 	 * 10.0.105.67
 	 * 10.6.55.247
+	 * 10.6.52.18
+	 * 192.168.0.11
 	 * String url = "http://10.0.109.122/jsons/loginP.json"; // firma
 	 * String url = "http://192.168.0.11/jsons/loginP.json"; // casa 
 	 * String url = "http://192.168.0.11/jsons/index.php?"; // casa usando servidor php

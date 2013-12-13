@@ -207,7 +207,7 @@ public class HomePatrao extends Activity {
 		LinearLayout ly = new LinearLayout(contexto);
 		final EditText login = new EditText(contexto);
 		final TextView tlogin = new TextView(contexto);
-		tlogin.setText("Login do empregado: ");
+		tlogin.setText("Login do funcionário: ");
 		ly.addView(tlogin);
 		ly.addView(login);
 		login.setWidth(BIND_ADJUST_WITH_ACTIVITY);
@@ -233,7 +233,7 @@ public class HomePatrao extends Activity {
             }
         });
  
-        alerta.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alerta.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 //Cancelado.
             }

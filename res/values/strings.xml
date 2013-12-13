@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Rodoviária</string>
-    <string name="action_settings"></string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Ponto Digital</string>
+    <string name="hello_world">Bem Vindo!</string>
     <string name="logar">Logar</string>
     <string name="sair">Sair</string>
     <string name="patrao">Sou Patrão</string>
@@ -12,13 +11,16 @@
     <string name="senhaesqueci">Esqueci minha senha</string>
     <string name="title_activity_home_empregado">Seus dados</string>
     <string name="title_activity_home_patrao">Seus dados</string>
-    <string name="infoPatrao">Selecione seu motorista para visualizá-lo ou insira um novo</string>
-    <string name="addEmp">Adicionar Motorista</string>
+    <string name="infoPatrao">Selecione seu funcionário para visualizar seu status ou insira um novo</string>
+    <string name="addEmp">Adicionar Funcionário</string>
     <string name="configuraGPS">Alterar local da minha casa</string>
-    <string name="volta">Voltar</string>
-    <string name="nulo"></string>
+    <string name="volta">Volta</string>
+    <string name="deslogar">Deslogar</string>
+    <string name="nulo"> </string>
     <string name="bemvindo">Seja Bem vindo, </string>
-    <string name="marcaponto">Marcar Rodoviária</string>
-    <string name="title_activity_view_empregado">Dados de Motorista</string>
+    <string name="marcaponto">Marcar Ponto</string>
+    <string name="title_activity_view_empregado">Dados do Funcionário</string>
+    <string name="configuracao">Configuração</string>
+    <string name="textoEmpregado">Marque suas tarefas realizadas:<!-- texto Empregado --></string>
 
 </resources>

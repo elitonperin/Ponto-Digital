@@ -1,10 +1,13 @@
 package tb.eliton.telas;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.apache.http.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import tb.eliton.model.Empregado;
 import tb.eliton.model.Local;
 import tb.eliton.model.Tarefas;
@@ -32,6 +35,7 @@ public class HomeEmpregado extends Activity {
 	private GPSTracker gps;
 	public double latitude;
 	public double longitude;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -45,13 +49,14 @@ public class HomeEmpregado extends Activity {
 		buscaCasaPatrao();
 
 		empregado.setNome(opts.getString("nome"));
+		empregado.setLogin(opts.getString("login"));
 		Log.i("tom", empregado.getPatrao());
 		texto.setText("Bem vindo, " + empregado.getNome());
 		
-		empregado.getTarefas().add(new Tarefas("Campo Grande", true));
-		empregado.getTarefas().add(new Tarefas("Sidrolândia", false));
-		empregado.getTarefas().add(new Tarefas("Maracaju", false));
-		empregado.getTarefas().add(new Tarefas("Dourados", false));
+		empregado.getTarefas().add(new Tarefas("Arrumar a .. na ...", true));
+		empregado.getTarefas().add(new Tarefas("Limpar ...", false));
+		empregado.getTarefas().add(new Tarefas("Levar ...", false));
+		empregado.getTarefas().add(new Tarefas(" ... ", false));
 		
 		listaTarefas = (ListView) findViewById(R.id.lista_tarefas);
 		listaTarefas.setAdapter(new ListaTarefasView(contexto,
@@ -80,9 +85,7 @@ public class HomeEmpregado extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				gps = new GPSTracker(contexto);
-				
 				if(gps.PossoObterConexao()){
-					if(true){
 						
 						Date data = new Date();
 
@@ -98,15 +101,12 @@ public class HomeEmpregado extends Activity {
 						Log.i("tom","e: lon "+ casaPatrao.getLongitude());
 						
 						if(casaPatrao.distaceOf(empregado.getLocalAtual()) < 0.1){
-						
 							empregado.getPonto().add(data);
-							
-							
-							Toast.makeText(contexto, "Ponto Realizado "+empregado.getPonto().get
+							Toast.makeText(contexto, "Ponto Realizado "+ empregado.getPonto().get
 									(empregado.getPonto().size()-1).toString() ,
-									Toast.LENGTH_LONG).show();
+									Toast.LENGTH_LONG).show();							
+							enviarDataBanco();
 						}
-					}
 				}else{
 					Toast.makeText(contexto, "Verifique sua conexão e GPS e tente novamente" , Toast.LENGTH_LONG).show();
 				}
@@ -117,6 +117,33 @@ public class HomeEmpregado extends Activity {
 		});
 	}
 
+	protected void enviarDataBanco() {
+		// TODO Auto-generated method stub
+		LoadDadosASYNC task = new LoadDadosASYNC();
+
+		String data_inicial_formatada = new SimpleDateFormat("dd-MM-yyyy").format(
+				empregado.getPonto().get(0));
+		String hora_inicial_formatada = new SimpleDateFormat("HH:mm").format(
+				empregado.getPonto().get(0));
+		int tam = empregado.getPonto().size();
+		String hora_final_formatada = "Ponto não realizado";
+		String data_final_formatada = "Ponto não realizado"; 
+		if(tam > 1){
+			data_final_formatada = new SimpleDateFormat("dd-MM-yyyy").format(
+				empregado.getPonto().get(tam-1));
+			hora_final_formatada = new SimpleDateFormat("HH:mm").format(
+				empregado.getPonto().get(tam-1));
+		}
+		Log.i("tom", "d: "+ data_inicial_formatada + " h: " + hora_inicial_formatada);
+		Log.i("tom", "d: "+ data_final_formatada + " h: " + hora_final_formatada);
+
+		String url = "http://" + HttpHelper.IP + "/GitHub/PontoDigital/public/horario-rest/"+
+				empregado.getLogin() +"?hora_i="+ hora_inicial_formatada +"&hora_f="+
+				 hora_final_formatada +"&data_i=" + data_inicial_formatada + "&patrao="+ empregado.getPatrao();
+		
+		task.execute(url);
+		
+	}
 	protected void buscaCasaPatrao() {
 		// TODO Auto-generated method stub
 		LoadDadosASYNC task = new LoadDadosASYNC();

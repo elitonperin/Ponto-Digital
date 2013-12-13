@@ -9,12 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bemvindo" />
-    <TextView
-	    android:id="@+id/descricaoHomeEmpregado"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/textHomeEmpregado"
-	    android:text="@string/bemvindo" />
 
     <ListView
         android:id="@+id/lista_tarefas"
@@ -41,6 +35,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/sair" />
+        android:text="@string/deslogar" />
+
+    <TextView
+        android:id="@+id/descricaoHomeEmpregado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textHomeEmpregado"
+        android:text="@string/textoEmpregado" />
 
 </RelativeLayout>

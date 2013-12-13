@@ -55,15 +55,6 @@
          android:text="@string/patrao" />
 
      <Button
-         android:id="@+id/buttonSenha"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/buttonSair"
-         android:layout_below="@+id/checkBox1"
-         android:layout_marginTop="23dp"
-         android:text="@string/senhaesqueci" />
-
-     <Button
          android:id="@+id/buttonLogar"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
